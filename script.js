@@ -1,30 +1,16 @@
-// 🌗 Dark/Light Mode
-const themeBtn = document.getElementById("theme-toggle");
-themeBtn.addEventListener("click", () => {
-  document.body.toggleAttribute("data-theme", "dark");
-});
+<script>
+  // Get the toggle button element by its ID
+  const themeToggleBtn = document.getElementById('theme-toggle');
 
-// 🎨 Project Filters
-const filterBtns = document.querySelectorAll(".filters button");
-const projects = document.querySelectorAll(".project");
-
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const cat = btn.getAttribute("data-category");
-    projects.forEach(p => {
-      p.style.display = cat === "all" || p.dataset.category === cat 
-        ? "block" 
-        : "none";
-    });
+  // When the button is clicked, toggle the "dark-mode" class on <body>
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Optional: Update button text based on current mode
+    if(document.body.classList.contains('dark-mode')) {
+      themeToggleBtn.textContent = "Light Mode";
+    } else {
+      themeToggleBtn.textContent = "Dark Mode";
+    }
   });
-});
-
-// ✨ Smooth scroll for older browsers
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
+</script>
