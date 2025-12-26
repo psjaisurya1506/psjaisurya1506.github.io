@@ -1,51 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/script.js"></script>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>Hi, I’m <span>Your Name</span></h1>
-        <p>Web Developer | Designer | Problem Solver</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
-</header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">MyPortfolio</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle">🌙</button>
+  </nav>
 
-<section id="about">
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hi, I'm <span class="accent">Your Name</span></h1>
+    <p>Web Developer | Designer | Creative Maker</p>
+    <div class="socials">
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">GitHub</a>
+      <a href="#" target="_blank">Twitter</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I’m a developer building things for the web.</p>
-</section>
+    <p>
+      I’m a passionate developer with experience in building modern,
+      responsive websites using HTML, CSS, and JavaScript.
+    </p>
+  </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <h3>Project One</h3>
-            <p>A brief description of your project.</p>
-            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-            <h3>Project Two</h3>
-            <p>A brief description of your project.</p>
-            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
-        </div>
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <h4>HTML</h4>
+        <div class="bar"><div class="progress html"></div></div>
+      </div>
+      <div class="skill">
+        <h4>CSS</h4>
+        <div class="bar"><div class="progress css"></div></div>
+      </div>
+      <div class="skill">
+        <h4>JavaScript</h4>
+        <div class="bar"><div class="progress js"></div></div>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-</footer>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
 
+    <div class="filters">
+      <button data-category="all">All</button>
+      <button data-category="web">Web</button>
+      <button data-category="ui">UI/UX</button>
+    </div>
+
+    <div class="project-grid">
+      <div class="project" data-category="web">
+        <h3>Portfolio Site</h3>
+        <p>Modern and responsive portfolio.</p>
+      </div>
+      <div class="project" data-category="ui">
+        <h3>App Design</h3>
+        <p>UI prototype for mobile app.</p>
+      </div>
+      <div class="project" data-category="web">
+        <h3>E‑commerce UI</h3>
+        <p>Frontend build with animations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Your Name. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
+
