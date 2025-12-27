@@ -1,41 +1,112 @@
-/* Base (Light Mode) Styles */
-body {
-  background-color: #ffffff; /* white background */
-  color: #000000;            /* black text */
-  font-weight: bold;         /* bold text by default */
+/* Defensive Cybersecurity Theme */
+:root {
+  --bg-color: #0a0e14;        /* Deep midnight blue/black */
+  --nav-bg: #11171f;         /* Slightly lighter slate */
+  --accent-blue: #00d4ff;     /* "Shield" Blue */
+  --accent-green: #39ff14;    /* "System Healthy" Green */
+  --text-main: #e0e6ed;       /* Soft white for readability */
+  --border-color: #1e293b;    /* Subtle grid-like borders */
+  --font-mono: 'Courier New', Courier, monospace;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;         /* headers strong/bold */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+  background: var(--bg-color); 
+  color: var(--text-main); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6; 
 }
 
-a {
-  color: #0077cc;            /* blue links in light mode */
-  font-weight: bold;         /* bold links */
+/* Navigation - Command Center Style */
+nav { 
+  padding: 15px; 
+  text-align: center; 
+  background: var(--nav-bg); 
+  border-bottom: 2px solid var(--accent-blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-section {
-  border-bottom: 2px solid #ddd;
+nav a { 
+  margin: 0 15px; 
+  text-decoration: none; 
+  color: var(--accent-blue); 
+  font-weight: bold; 
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Dark / High-Contrast Mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #111111; /* very dark background */
-    color: #f5f5f5;             /* light high-contrast text */
-    font-weight: bold;          /* keep text bold */
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;          /* headers bold in dark mode */
-  }
-
-  a {
-    color: #66baff;             /* bright blue links */
-    font-weight: bold;          /* bold links for visibility */
-  }
-
-  section {
-    border-bottom: 2px solid #444444; /* visible section borders */
-  }
+nav a:hover {
+  color: var(--accent-green);
+  text-shadow: 0 0 8px var(--accent-green);
 }
+
+/* Section Styling */
+section { 
+  padding: 60px 10% ; 
+  border-bottom: 1px solid var(--border-color); 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h2 { 
+  color: var(--accent-blue); 
+  font-family: var(--font-mono);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent-green);
+  padding-left: 15px;
+}
+
+strong { color: var(--accent-green); }
+
+/* Buttons & Links */
+.btn-toggle { 
+  padding: 8px 16px; 
+  cursor: pointer; 
+  border: 1px solid var(--accent-blue); 
+  background: transparent; 
+  color: var(--accent-blue);
+  font-family: var(--font-mono);
+  transition: 0.3s;
+}
+
+.btn-toggle:hover {
+  background: var(--accent-blue);
+  color: var(--bg-color);
+  box-shadow: 0 0 15px var(--accent-blue);
+}
+
+/* Terminal-style List Boxes */
+.skills-list, .projects-list { 
+  list-style: none;
+  background: #0d1520;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+}
+
+.skills-list li::before {
+  content: "[SEC_OK] ";
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-weight: bold;
+}
+
+.projects-list li {
+  margin: 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+/* Resume link */
+#resume a {
+  color: var(--accent-green);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#resume a:hover { text-decoration: underline; }
